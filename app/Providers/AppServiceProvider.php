@@ -2,20 +2,24 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-class RouteServiceProvider extends ServiceProvider
+class AppServiceProvider extends ServiceProvider
 {
+    public function register(): void
+    {
+        //
+    }
+
     public function boot(): void
     {
-        // Load web routes (default Laravel 11)
+        // Load web routes
         Route::middleware('web')
             ->group(base_path('routes/web.php'));
-
-        // Tambahkan ini untuk dukungan API
+        // Load API routes
         Route::prefix('api')
             ->middleware('api')
             ->group(base_path('routes/api.php'));
     }
 }
+
