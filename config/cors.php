@@ -6,7 +6,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:3000'], // frontend Next.js kamu
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
